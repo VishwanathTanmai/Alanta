@@ -1,0 +1,69 @@
+/* Normalize browser defaults */
+* {
+    box-sizing: border-box; /* Ensure consistent element sizing */
+    margin: 0; /* Remove default margins from most elements */
+    font-family: sans-serif; /* Base font for a clean, modern look */
+  }
+  
+  /* Body styles */
+  body {
+    background-image: url("/logo.jpeg");
+    background-repeat: no-repeat; /* Prevent image tiling */
+    background-position: center; /* Center background image */
+    font-size: 16px; /* A more common base font size */
+    color: #333; /* Darker text for better readability */
+  }
+  
+  /* Links */
+  a {
+    color: dodgerblue;
+    transition: color 0.2s ease-in-out; /* Smooth hover effect */
+    text-decoration: none; /* Remove default underline */
+  }
+  
+  a:hover {
+    color: goldenrod;
+  }
+  
+  /* Paragraphs */
+  p {
+    margin: 0.75rem 0; /* Consistent margin using rem units */
+  }
+  
+  /* Horizontal rule */
+  hr {
+    margin: 1.5rem 0; /* Larger margin for separation */
+    border: 0; /* Remove default border */
+    border-top: 1px solid #ddd; /* Thin separator line */
+  }
+  
+  /* Forms */
+  form p {
+    display: flex;
+    align-items: center; /* Align form elements vertically */
+    margin-bottom: 0.5rem; /* Small margin after each form element */
+  }
+  
+  /* Tables */
+  table {
+    font-size: 1rem; /* Inherit font size from body */
+    border-collapse: collapse; /* Ensure consistent table borders */
+  }
+  
+  thead {
+    position: sticky;
+    top: 0;
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  thead th { /* Use `th` for table headers instead of `td` */
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* Consistent padding */
+  }
+  
+  td {
+    border: 1px solid dodgerblue;
+    padding: 0.5rem 1rem;
+  }
+  

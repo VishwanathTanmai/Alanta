@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="icon" href="./img/logo.jpeg"></link>
+        <script type="text/javascript" src="eel.js"></script>
+        <script type="text/javascript" src="js/libs/billboard.pkgd.min.js"></script>
+        <script type="text/javascript" src="js/callbacks.js"></script>
+        <script type="text/javascript" src="js/controls.js"></script>
+        <script type="text/javascript" src="js/operation.js"></script>
+        <script type="text/javascript" src="js/vis.js"></script>
+        <link rel="stylesheet" href="css/libs/billboard.min.css"></link>
+        <link rel="stylesheet" href="css/controls.css"></link>
+        <link rel="stylesheet" href="css/general.css"></link>
+        <link rel="stylesheet" href="css/main.css"></link>
+    </head>
+    <body onload="PreventUnload();RunInit()" onresize="UpdateLayouts()">
+        <div id="spinner-root" class="loading-spinner-wrapper">
+            <div>
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+        <header>
+            <div id="title" class="title">
+                <img src="./img/logo.jpeg" alt="Logo" height="100">
+                <span></span>
+                <div id="build-info"></div>
+            </div>
+            <div id="software-info">
+                <div id="supportlinks">
+                    <a href="https://github.com/VishwanathTanmai" target="_blank"><span class="title">GitHub</span><img src="img/github.svg" /></a><br/>
+                    <a href="#" target="_blank"><span class="title">Support me</span><img src="./img/logo.jpeg" /></a>
+                </div>
+                <div id="company-info"></div>
+            </div>
+        </header>
+        <section id="train_param_section">
+            <button type="button" class="collapsible title" id="train_param_header">Training Parameters</button>
+            <div class="collapsible-content" id="train_param_content" style="display:block"><form id="train_params"></form></div>
+        </section>
+        <section id="operation_button_section">
+            <button type="button" class="collapsible title">Run Training</button>
+            <div class="collapsible-content" style="display:block">
+                <div id="operation_button_content">
+                    <button onclick="StartTrain()" id="start_train_btn">Start</button> 
+                    <button onclick="AbortTrain()" id="abort_train_btn" disabled>Abort</button>            
+                    <span id="curr_status" style="font-weight:bold">IDLE</span>
+                    <br/>
+                    Epoch <span id="curr_epoch">0</span> of <span id="max_epoch">0</span><span id="epoch_progress"></span>
+                </div>
+            </div>
+        </section>
+        <section id="history_section">
+            <button type="button" class="collapsible title">Histories</button>
+            <div class="collapsible-content" id="history_content"style="display:none">
+                <div id="history_content_btn">
+                    <button onclick="ExportHistories()">Export to CSV</button>
+                    <input type="checkbox" id="history-table-autoscroll" checked>Auto scroll</input>
+                </div>
+                <div id="history_content_table">
+                    <table id="history_table"></table>
+                </div>
+            </div>
+        </section>
+        <section id="vis-section">
+            <button type="button" class="collapsible title">Visualization</button>
+            <div class="collapsible-content" id="vis_content" style="display: none;">
+                <div id="line-charts-grid"></div>
+            </div>
+        </section>
+        <section id="messagelog-section">
+            <button type="button" class="collapsible title">Message Log</button>
+            <div class="collapsible-content" id="messagelog-content" style="display: none;">
+                <div id="messagelog-content-btn">
+                    <button onclick="SaveMessageLog()">Save</button>
+                    <button onclick="ClearMessageLog()">Clear</button>
+                    <input type="checkbox" id="messagelog-autoscroll" checked>Auto scroll</input>
+                </div>
+                <div id="messagelog-box" readonly></div>
+            </div>
+        </section>
+        <footer>
+            <p>@ copyright 2024-25</p>
+            <p><a href="./img/logo.jpeg"></a></p>
+          </footer>
+    </body>
+</html>

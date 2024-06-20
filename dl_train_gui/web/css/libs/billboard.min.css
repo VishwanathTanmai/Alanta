@@ -1,0 +1,16 @@
+
+.bb-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .bb-button .bb-zoom-reset {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 5px;
+  }
+  
